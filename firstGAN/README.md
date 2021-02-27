@@ -14,7 +14,7 @@ The three main steps involved in this project are:
 
 The training images for the model are obtained from the [MNIST](http://yann.lecun.com/exdb/mnist/). It contains 60,000 images of handwritten digits, from 0 to 9, of 28x28 size. A sample of these images taken from Wikipedia is shown below:
 
-![MNIST data](https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMNIST_database&psig=AOvVaw0ppmEPOnLeXPYNeWjG5XRV&ust=1614535472265000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKil0b7Tiu8CFQAAAAAdAAAAABAD)
+![MNIST data](https://raw.githubusercontent.com/himasai97/GANs/main/firstGAN/MNIST.png)
 
 ## Noise generation
 When creating the noise vectors, it must be ensured that the images generated from the same class don't all look the same. For this purpose, PyTorch is used to randomly sample numbers from the normal distribution.
@@ -48,7 +48,7 @@ In the forward pass method of this class, the discriminator model takes an image
 
 [BCEWithLogitsLoss](https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html) is the loss function used in this project
 
-** Get Discriminator's loss**:
+**Get Discriminator's loss**:
 
 Here, the noise vectors are first created and then fed to the generator to get a batch of fake images.
 
@@ -58,7 +58,7 @@ Then the discriminator is called with a batch of real images and the loss is cal
 
 Finally the discriminator's loss is calculated by taking the average of the real and fake losses
 
-** Get Generator's loss**
+**Get Generator's loss**
 
 Similar to the discriminator's case, the noise vectors are created in the first step and fed to the generator to get a batch of fake images.
 
@@ -71,6 +71,16 @@ Here, batches refer to a set of images that are processed per training step inst
 
 In this project, I used [Adam optimization algorithm from PyTorch](https://pytorch.org/docs/stable/optim.html) to optimize both the generator and discriminator models.
 
-Thus, my first GAN model is built with sufficient accuracy in generating fake images of hand-written digits.
+Thus, my first GAN model is built with sufficient accuracy in generating fake images of hand-written digits. The progression in the images generated is shown below:
+
+![Results](https://raw.githubusercontent.com/himasai97/GANs/main/firstGAN/Result.PNG)
+
+**Observations**
+
+- The discriminator often outperforms the generator as its job is easier. 
+- Sometimes, the generator's loss is greater than 1. This is because for a sufficiently confident wrong guess, the binary cross entropy loss can be any positive number.
+- While it's possible to get a near-perfect accuracy for one of the two models, it is important to ensure that neither one gets too good, as it would cause the entire model to stop learning. Balancing the two models is a difficult task in a standard GAN. As a result, in the next project I will work on DCGAN and explore its advantages over the standard model.
+
+
 
 
