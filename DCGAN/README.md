@@ -24,5 +24,8 @@ The progression in the images generated is shown below
 
 ![Result_DCGAN](https://raw.githubusercontent.com/himasai97/GANs/main/DCGAN/Result_DCGAN.PNG)
 
-**Observation**:
+# Observation
+
 While there is a better balance between the discriminator and the generator in a DCGAN when compared with the standard GAN model, it is to be observed that generator is disproportionately producing certain digits (like 1, 8, 0 and 3) when compared to others. Because the discriminator didn't learn to detect this imbalance quickly enough, the generator continued producing similar outputs. As a result, it ended up tricking the discriminator so well that there was no improvement to be found in the model, also known as a mode collapse.
+
+To mitigate unstable learning and mode collapse, I have implemented an andvanced technique called WGANs in the next project.
