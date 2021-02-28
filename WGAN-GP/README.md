@@ -17,6 +17,7 @@ For the generator, the loss is calculated to maximize the critic's prediction on
 For the critic, the loss is calculated to maximize the distance between the critic's prediction on the real images and the predictions on the fake images while also adding a gradient penalty that is weighed by a given lambda value.
 
 ## Snapshot of Outputs
+![Results](https://raw.githubusercontent.com/himasai97/GANs/main/WGAN-GP/Result_WGAN_GP.PNG)
 
 ## Observations
 
