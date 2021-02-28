@@ -21,7 +21,7 @@ It has 3 layers (2 hidden + 1 output)
 
 Each block in the Discriminator has a [convolution layer](https://pytorch.org/docs/master/generated/torch.nn.Conv2d.html) inplace of a linear transformation layer.
 
-## Results
+## Snapshot of Outputs
 
 The progression in the images generated is shown below
 
